@@ -52,8 +52,8 @@ void print_help(int exval) {
 	printf("  -i interval ms[1-6000] 	  	sets message interval timing\r\n\r\n");
 	printf("  -t tx_retries [0-255] 	  	sets message send retries\r\n\r\n");
 	printf("  -c channel 	[1-255] 		set transmit channel\r\n");
-	printf("  -f frequency  [315,434,868,915] (1, 2, 3, 4) 	set ISM band\r\n\r\n");
-	printf("  -m modulation [1,38,100,250,500,4] (1, 2, 3, 4, 5, 6)	set modulation\r\n\r\n");
+	printf("  -f frequency  [315,434,868,915] (0, 1, 2, 3) 	set ISM band\r\n\r\n");
+	printf("  -m modulation [1,38,100,250,500,4] (0, 1, 2, 3, 4, 5)	set modulation\r\n\r\n");
 
 	exit(exval);
 }
@@ -71,8 +71,8 @@ int main()
     interval = 1;
     tx_retries = 0x00;
     cc1100_channel_select = 0x01;
-    cc1100_freq_select = 0x04;
-    cc1100_mode_select = 0x05;
+    cc1100_freq_select = 0x03;
+    cc1100_mode_select = 0x04;
 
 	//------------- welcome message ------------------------
 	printf("Raspberry CC1101 SPI Library test\n");
